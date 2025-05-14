@@ -73,7 +73,9 @@ def test():
 
         # Update remaining questions and count
         remaining_indices = session['remaining_indices']
-        remaining_indices.remove(question_index)
+        # Add safety check before removing
+        if question_index in remaining_indices:
+            remaining_indices.remove(question_index)
         session['remaining_indices'] = remaining_indices
         session['asked_questions'] = session['asked_questions'] + 1
 
