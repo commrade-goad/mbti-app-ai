@@ -23,10 +23,15 @@ useless_data = {
     "JP": 0,
 }
 
+@app.route('/home', methods=['GET'])
+def home():
+    return render_template('home.html')
+
 @app.route('/')
 def index():
     session.clear()
-    return render_template('index.html')
+    # return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/test', methods=['GET', 'POST'])
 def test():

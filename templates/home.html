@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <title>MBTI AI Personality Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <style>
+      .feature-card {
+        transition: transform 0.2s;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+      .icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-5">
+      <header class="text-center mb-5">
+        <div class="d-flex align-items-center justify-content-center mb-4">
+          <img src="../static/test.png" width="64" class="me-3" style="filter: invert(1)"/>
+          <h1 class="display-4 fw-bold m-0">MBTI AI Personality Test</h1>
+        </div>
+        <!-- <p class="lead text-muted">Discover your personality type and ideal career path using advanced AI algorithms</p> -->
+        <p class="lead text-muted">Cari tahu sifat dan karir ideal dengan menggunakan AI</p>
+      </header>
+
+      <div class="row g-4 mb-5">
+        <!-- Feature 1: AI-Powered Analysis -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center p-4">
+              <div class="icon">🤖</div>
+              <h3 class="h5 card-title">AI-Powered Analysis</h3>
+              <!-- <p class="card-text">Using Bayesian algorithms and Decision Trees to provide accurate personality assessments and career recommendations.</p> -->
+              <p class="card-text">Menggunakan Bayesian Algoriths dan Decision Tree untuk mengetahui sifat serta mendapatkan karir rekomendasi yang akurat.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2: Personality Insights -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center p-4">
+              <div class="icon">🎯</div>
+              <h3 class="h5 card-title">Comprehensive MBTI Assessment</h3>
+              <!-- <p class="card-text">Discover your personality type among 16 MBTI types with detailed descriptions and characteristics.</p> -->
+              <p class="card-text">Ketahui sifat dan personality dari 16 tipe MBTI dengan detail deskripsi yang lengkap.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3: Career Matching -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm feature-card">
+            <div class="card-body text-center p-4">
+              <div class="icon">💼</div>
+              <h3 class="h5 card-title">Career Path Matching</h3>
+              <!-- <p class="card-text">Get personalized job recommendations based on your MBTI type using our intelligent job prediction system.</p> -->
+              <p class="card-text">Dapatkan rekomendasi pekerjaan dari tipe MBTI yang kamu miliki dengan menggunakan AI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Start Test Section -->
+      <div class="card p-4 shadow-sm">
+        <div class="card-body text-center">
+          <h2 class="card-title mb-4">Ready to Discover Your Personality Type?</h2>
+          <p class="card-text mb-4">Ambil test kami untuk mengetahui lebih lanjut tentang dirimu dan karir idealmu.</p>
+          <form action="{{ url_for('test') }}" method="get">
+            <div class="mb-3">
+              <input type="text" class="form-control" name="name" placeholder="Enter your name" required />
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" name="email" placeholder="Enter your email" required />
+            </div>
+            <div class="mb-3">
+              <input type="tel" class="form-control" name="telp" placeholder="Enter your phone number (optional)" />
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Start Test</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="text-center mt-5">
+        <p class="text-muted">MBTI AI Application v1.0</p>
+      </footer>
+    </div>
+  </body>
+</html>
